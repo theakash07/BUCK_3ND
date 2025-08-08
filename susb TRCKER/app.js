@@ -7,6 +7,7 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 
 import subscritpionRouter from './routes/subscription.route.js';
+import connectToDatabase from './DATABASE/mongodb.js';
 
 
 const app = express();
@@ -20,8 +21,10 @@ app.get('/', (req, res) => {
     res.send('welcome to the subscritpion router !');
 });
 
-app.listen(PORT, ()=> {
+app.listen(PORT,async ()=> {
     console.log(`Server running on port http://localhost:${PORT}`);
+
+    await connectToDatabase();
 })
 
 export default app ;
