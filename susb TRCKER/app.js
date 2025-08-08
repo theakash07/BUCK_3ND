@@ -1,4 +1,6 @@
 import express from 'express';
+
+
 import cookieParser from 'cookie-parser';
 
 import { PORT } from './config/env.js'
@@ -12,7 +14,7 @@ import connectToDatabase from './DATABASE/mongodb.js';
 
 
 import errorMiddleware from './middlewares/error.middleware.js';
-import cookieParser from 'cookie-parser';
+
 
 
 const app = express();
